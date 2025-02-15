@@ -17,7 +17,7 @@ public class EmployeeService {
         return employeeRepository.getAllEmployeeList();
     }
 
-    public Employee getEmployeeById(String id){
+    public Employee getEmployeeById(String id) throws Exception {
         return employeeRepository.getEmployeeById(id);
     }
 
@@ -27,5 +27,13 @@ public class EmployeeService {
 
     public Employee saveEmployee(Employee employee){
         return employeeRepository.saveEmployee(employee);
+    }
+
+    public boolean deleteEmployee(String id) throws Exception {
+        return employeeRepository.deleteEmployee(id);
+    }
+
+    public Employee updateEmployee(String id, Employee newEmployee) throws Exception {
+        return employeeRepository.updateEmployee(id, newEmployee);
     }
 }
