@@ -3,6 +3,7 @@ package com.yusuf.controller;
 import com.sun.net.httpserver.Authenticator;
 import com.yusuf.model.Employee;
 import com.yusuf.services.EmployeeService;
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +19,7 @@ public class EmployeeController {
     private EmployeeService employeeService;
 
     @GetMapping("/list-all")
+    @Operation(summary = "get all employees", description = "fetch all employees from employeeList")
     public List<Employee> getAllEmployeeList(){
         return employeeService.getAllEmployeeList();
     }
